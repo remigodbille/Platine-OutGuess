@@ -1,0 +1,16 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppThemeIndigo" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/indigoMedium</item>
+        <item name="colorPrimaryDark">@color/indigoVeryDark</item>
+        <item name="android:windowBackground">@color/greyDark</item>
+    </style>
+
+    <style name="AppThemeBlue" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/blueMedium</item>
+        <item name="colorPrimaryDark">@color/blueVeryDark</item>
+        <item name="android:windowBackground">@color/greyDark</item>
+    </style>
+
+</resources>
