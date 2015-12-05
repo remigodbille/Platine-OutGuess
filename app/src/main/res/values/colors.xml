@@ -29,4 +29,6 @@
     <item name="greyMedium" type="color">#9E9E9E</item>
     <item name="greyDark" type="color">#616161</item>
     <item name="greyVeryDark" type="color">#212121</item>
+
+    <item name="white" type="color">#FFFFFF</item>
 </resources>

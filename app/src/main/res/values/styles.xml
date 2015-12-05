@@ -13,4 +13,10 @@
         <item name="android:windowBackground">@color/greyDark</item>
     </style>
 
+    <style name="AppThemeHome" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/indigoMedium</item>
+        <item name="colorPrimaryDark">@color/indigoVeryDark</item>
+        <item name="android:windowBackground">@color/blueDark</item>
+    </style>
+
 </resources>
