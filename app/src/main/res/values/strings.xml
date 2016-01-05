@@ -1,10 +1,13 @@
 <resources>
+    <!-- strings nom application / activités -->
     <string name="app_name">OutGuess</string>
-
-    <string name="button_play">Jouer</string>
-    <string name="button_media">Parcourir les oeuvres</string>
-
     <string name="title_activity_question">QuestionActivity</string>
     <string name="title_activity_home">Accueil</string>
+
+    <!-- strings activité accueil -->
+    <string name="button_play">Jouer</string>
+    <string name="button_media">Voter</string>
+
+
 
 </resources>
