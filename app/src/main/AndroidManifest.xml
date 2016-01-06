@@ -10,11 +10,11 @@
         android:theme="@style/AppThemeHome" >
 
         <activity
-            android:name=".QuestionActivity" >
+            android:name=".activities.QuestionActivity" >
         </activity>
 
         <activity
-            android:name=".HomeActivity" >
+            android:name=".activities.HomeActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
