@@ -8,7 +8,7 @@
         android:layout_width="20dp"
         android:layout_height="300dp"
 
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="80dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="30dp"
 
@@ -23,7 +23,7 @@
         android:textColor="@android:color/transparent"
         android:id="@+id/textView1"
         android:background="@color/white"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="70dp"
         android:layout_toRightOf="@+id/progressBar"
         android:layout_toEndOf="@+id/progressBar" />
 
@@ -36,7 +36,7 @@
         android:textColor="@android:color/transparent"
         android:id="@+id/textView2"
         android:background="@color/white"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="120dp"
         android:layout_toRightOf="@+id/progressBar"
         android:layout_toEndOf="@+id/progressBar" />
 
@@ -49,7 +49,7 @@
         android:textColor="@android:color/transparent"
         android:id="@+id/textView3"
         android:background="@color/white"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="170dp"
         android:layout_toRightOf="@+id/progressBar"
         android:layout_toEndOf="@+id/progressBar" />
 
@@ -62,7 +62,7 @@
         android:textColor="@android:color/transparent"
         android:id="@+id/textView4"
         android:background="@color/white"
-        android:layout_marginTop="170dp"
+        android:layout_marginTop="220dp"
         android:layout_toRightOf="@+id/progressBar"
         android:layout_toEndOf="@+id/progressBar" />
 
@@ -75,7 +75,7 @@
         android:textColor="@android:color/transparent"
         android:id="@+id/textView5"
         android:background="@color/white"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="270dp"
         android:layout_toRightOf="@+id/progressBar"
         android:layout_toEndOf="@+id/progressBar" />
 
@@ -88,13 +88,15 @@
         android:textColor="@android:color/transparent"
         android:id="@+id/textView6"
         android:background="@color/white"
-        android:layout_marginTop="270dp"
+        android:layout_marginTop="320dp"
         android:layout_toRightOf="@+id/progressBar"
         android:layout_toEndOf="@+id/progressBar" />
 
     <EditText
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:imeOptions="actionDone"
+        android:singleLine="true"
         android:text=""
         android:hint="Réponse"
         android:id="@+id/textAnswer"

@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -100,7 +101,7 @@ public class QuestionActivity extends Activity {
                 dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         finish();
-                        startActivity(new Intent(getApplicationContext(), QuestionActivity.class));
+                        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                     }
                 });
 
