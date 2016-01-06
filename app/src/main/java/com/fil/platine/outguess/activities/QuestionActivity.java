@@ -4,12 +4,12 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.app.Activity;
 import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -25,7 +25,8 @@ public class QuestionActivity extends Activity {
     CountDownTimer mCountDownTimer;
 
     int mCurrProgress = 0;
-    int TIMER_QUESTION = 30;
+    int TIMER_QUESTION = 30000;
+    int TIMER_REFRESH = 50;
     String CORRECT_ANSWER;
 
     TextView[] mTextViewList;
@@ -55,26 +56,36 @@ public class QuestionActivity extends Activity {
         showText(mTextViewList[mNextItem]);
         mNextItem++;
 
-        mCountDownTimer = new CountDownTimer(30000, 1000) {
+        mCountDownTimer = new CountDownTimer(TIMER_QUESTION, TIMER_REFRESH) {
 
             @Override
             public void onTick(long millisUntilFinished) {
                 Log.i("TAG_Timer", "Tick of Progress : " + mCurrProgress + " " +millisUntilFinished);
-                mCurrProgress++;
+                mCurrProgress += TIMER_REFRESH;
                 mProgressBar.setProgress(mCurrProgress);
 
-                if(mCurrProgress%5 == 0) {
+                if(mCurrProgress%5000 == 0) {
                     Log.i("TAG_TIMER", "New Word");
 
                     showText(mTextViewList[mNextItem]);
                     mNextItem++;
+
+                    /*
+                    if(mCurrProgress >= TIMER_QUESTION/3) {
+                        mProgressBar.getProgressDrawable().setColorFilter(Color.YELLOW, PorterDuff.Mode.SRC_IN);
+                    }
+
+                    if(mCurrProgress >= 2*TIMER_QUESTION/3) {
+                        mProgressBar.getProgressDrawable().setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN);
+                    }
+                    */
                 }
             }
 
             @Override
             public void onFinish() {
                 Log.i("TAG_Timer", "Tick of Progress : " + mCurrProgress);
-                mCurrProgress++;
+                mCurrProgress = TIMER_QUESTION;
                 mProgressBar.setProgress(mCurrProgress);
 
                 Log.i("TAG_Timer", "Timer finished !");
