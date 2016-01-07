@@ -3,7 +3,6 @@ package com.fil.platine.outguess.activities;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.app.Activity;
 import android.os.CountDownTimer;
@@ -27,6 +26,8 @@ public class QuestionActivity extends Activity {
     int TIMER_QUESTION = 30000;
     int TIMER_REFRESH = 50;
     String CORRECT_ANSWER;
+
+    int SCORE = 0;
 
     TextView[] mTextViewList;
     int mNextItem;
@@ -111,13 +112,17 @@ public class QuestionActivity extends Activity {
                 dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         finish();
-                        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                        startActivity(new Intent(getApplicationContext(), ScoreActivity.class));
                     }
                 });
 
                 if(checkAnswer(mEditTextAnswer.getText().toString())) {
-                    dialog.setMessage("BRAVO !");
-                } else dialog.setMessage("PERDU !");
+                    SCORE = (TIMER_QUESTION - mCurrProgress) / 100;
+                    dialog.setMessage("BRAVO !\nVous avez obtenu " + SCORE + " points !");
+                } else {
+                    SCORE = 0;
+                    dialog.setMessage("PERDU !\nVous avez obtenu " + SCORE + " points !");
+                }
 
                 dialog.show();
             }
@@ -150,10 +155,6 @@ public class QuestionActivity extends Activity {
 
     public void showText(TextView textView){
         textView.setTextColor(getResources().getColor(R.color.greyLight));
-    }
-
-    public void hideText(TextView textView){
-        textView.setTextColor(Color.TRANSPARENT);
     }
 
 }

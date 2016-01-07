@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="50dp">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=""
+        android:hint="Oeuvre"
+        android:id="@+id/textViewQuestion1"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=""
+        android:hint="Oeuvre"
+        android:id="@+id/textViewQuestion2"
+        android:layout_below="@+id/textViewQuestion1"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=""
+        android:hint="Oeuvre"
+        android:id="@+id/textViewQuestion3"
+        android:layout_below="@+id/textViewQuestion2"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=""
+        android:hint="Oeuvre"
+        android:id="@+id/textViewQuestion4"
+        android:layout_below="@+id/textViewQuestion3"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=""
+        android:hint="Oeuvre"
+        android:id="@+id/textViewQuestion5"
+        android:layout_below="@+id/textViewQuestion4"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="30dp"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text=""
+        android:hint="Point 1 Player 1"
+        android:id="@+id/textViewScoreP1-1"
+        android:layout_toLeftOf="@+id/textViewQuestion1" />
+
+    <TextView
+        android:layout_width="30dp"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text=""
+        android:hint="Point 2 Player 1"
+        android:id="@+id/textViewScoreP1-2"
+        android:layout_below="@id/textViewScoreP1-1"
+        android:layout_toLeftOf="@+id/textViewQuestion2" />
+
+    <TextView
+        android:layout_width="30dp"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text=""
+        android:hint="Point 3 Player 1"
+        android:id="@+id/textViewScoreP1-3"
+        android:layout_below="@id/textViewScoreP1-2"
+        android:layout_toLeftOf="@+id/textViewQuestion3" />
+
+    <TextView
+        android:layout_width="30dp"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text=""
+        android:hint="Point 4 Player 1"
+        android:id="@+id/textViewScoreP1-4"
+        android:layout_below="@id/textViewScoreP1-3"
+        android:layout_toLeftOf="@+id/textViewQuestion4" />
+
+    <TextView
+        android:layout_width="30dp"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text=""
+        android:hint="Point 5 Player 1"
+        android:id="@+id/textViewScoreP1-5"
+        android:layout_below="@id/textViewScoreP1-4"
+        android:layout_toLeftOf="@+id/textViewQuestion5" />
+
+    <TextView
+        android:layout_width="30dp"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text=""
+        android:hint="Point 1 Player 2"
+        android:id="@+id/textViewScoreP2-1"
+        android:layout_toRightOf="@+id/textViewQuestion1" />
+
+    <TextView
+        android:layout_width="30dp"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text=""
+        android:hint="Point 2 Player 2"
+        android:id="@+id/textViewScoreP2-2"
+        android:layout_below="@id/textViewScoreP2-1"
+        android:layout_toRightOf="@+id/textViewQuestion2" />
+
+    <TextView
+        android:layout_width="30dp"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text=""
+        android:hint="Point 3 Player 2"
+        android:id="@+id/textViewScoreP2-3"
+        android:layout_below="@id/textViewScoreP2-2"
+        android:layout_toRightOf="@+id/textViewQuestion3" />
+
+    <TextView
+        android:layout_width="30dp"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text=""
+        android:hint="Point 4 Player 2"
+        android:id="@+id/textViewScoreP2-4"
+        android:layout_below="@id/textViewScoreP2-3"
+        android:layout_toRightOf="@+id/textViewQuestion4" />
+
+    <TextView
+        android:layout_width="30dp"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text=""
+        android:hint="Point 5 Player 2"
+        android:id="@+id/textViewScoreP2-5"
+        android:layout_below="@id/textViewScoreP2-4"
+        android:layout_toRightOf="@+id/textViewQuestion5" />
+
+</RelativeLayout>
