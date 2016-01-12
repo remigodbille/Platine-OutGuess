@@ -1,156 +1,213 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginTop="50dp">
+    android:layout_height="match_parent">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text=""
-        android:hint="Oeuvre"
-        android:id="@+id/textViewQuestion1"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text=""
+            android:hint="@string/null_question"
+            android:id="@+id/textViewQuestion1"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:background="@color/blueVeryDark" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text=""
-        android:hint="Oeuvre"
-        android:id="@+id/textViewQuestion2"
-        android:layout_below="@+id/textViewQuestion1"
-        android:layout_centerHorizontal="true" />
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text=""
+            android:hint="@string/null_question"
+            android:id="@+id/textViewQuestion2"
+            android:layout_below="@+id/textViewQuestion1"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:background="@color/bluegreyLight" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text=""
-        android:hint="Oeuvre"
-        android:id="@+id/textViewQuestion3"
-        android:layout_below="@+id/textViewQuestion2"
-        android:layout_centerHorizontal="true" />
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text=""
+            android:hint="@string/null_question"
+            android:id="@+id/textViewQuestion3"
+            android:layout_below="@+id/textViewQuestion2"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:background="@color/blueVeryDark" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text=""
-        android:hint="Oeuvre"
-        android:id="@+id/textViewQuestion4"
-        android:layout_below="@+id/textViewQuestion3"
-        android:layout_centerHorizontal="true" />
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text=""
+            android:hint="@string/null_question"
+            android:id="@+id/textViewQuestion4"
+            android:layout_below="@+id/textViewQuestion3"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:background="@color/bluegreyLight" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text=""
-        android:hint="Oeuvre"
-        android:id="@+id/textViewQuestion5"
-        android:layout_below="@+id/textViewQuestion4"
-        android:layout_centerHorizontal="true" />
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text=""
+            android:hint="@string/null_question"
+            android:id="@+id/textViewQuestion5"
+            android:layout_below="@+id/textViewQuestion4"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:background="@color/blueVeryDark" />
 
-    <TextView
-        android:layout_width="30dp"
-        android:layout_height="50dp"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text=""
-        android:hint="Point 1 Player 1"
-        android:id="@+id/textViewScoreP1-1"
-        android:layout_toLeftOf="@+id/textViewQuestion1" />
+        <View style="@style/Divider"
+            android:layout_width="3dp"
+            android:layout_height="250dp"
+            android:layout_toLeftOf="@id/textViewQuestion1"/>
 
-    <TextView
-        android:layout_width="30dp"
-        android:layout_height="50dp"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text=""
-        android:hint="Point 2 Player 1"
-        android:id="@+id/textViewScoreP1-2"
-        android:layout_below="@id/textViewScoreP1-1"
-        android:layout_toLeftOf="@+id/textViewQuestion2" />
+        <View style="@style/Divider"
+            android:layout_width="3dp"
+            android:layout_height="250dp"
+            android:layout_toRightOf="@id/textViewQuestion1"/>
 
-    <TextView
-        android:layout_width="30dp"
-        android:layout_height="50dp"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text=""
-        android:hint="Point 3 Player 1"
-        android:id="@+id/textViewScoreP1-3"
-        android:layout_below="@id/textViewScoreP1-2"
-        android:layout_toLeftOf="@+id/textViewQuestion3" />
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text=""
+            android:hint="@string/null_score"
+            android:id="@+id/textViewScoreP1Q1"
+            android:layout_toLeftOf="@+id/textViewQuestion1"
+            android:gravity="center_vertical|center_horizontal"
+            android:background="@color/blueVeryDark" />
 
-    <TextView
-        android:layout_width="30dp"
-        android:layout_height="50dp"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text=""
-        android:hint="Point 4 Player 1"
-        android:id="@+id/textViewScoreP1-4"
-        android:layout_below="@id/textViewScoreP1-3"
-        android:layout_toLeftOf="@+id/textViewQuestion4" />
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text=""
+            android:hint="@string/null_score"
+            android:id="@+id/textViewScoreP1Q2"
+            android:layout_below="@id/textViewScoreP1Q1"
+            android:layout_toLeftOf="@+id/textViewQuestion2"
+            android:gravity="center_vertical|center_horizontal"
+            android:background="@color/bluegreyLight" />
 
-    <TextView
-        android:layout_width="30dp"
-        android:layout_height="50dp"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text=""
-        android:hint="Point 5 Player 1"
-        android:id="@+id/textViewScoreP1-5"
-        android:layout_below="@id/textViewScoreP1-4"
-        android:layout_toLeftOf="@+id/textViewQuestion5" />
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text=""
+            android:hint="@string/null_score"
+            android:id="@+id/textViewScoreP1Q3"
+            android:layout_below="@id/textViewScoreP1Q2"
+            android:layout_toLeftOf="@+id/textViewQuestion3"
+            android:gravity="center_vertical|center_horizontal"
+            android:background="@color/blueVeryDark" />
 
-    <TextView
-        android:layout_width="30dp"
-        android:layout_height="50dp"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text=""
-        android:hint="Point 1 Player 2"
-        android:id="@+id/textViewScoreP2-1"
-        android:layout_toRightOf="@+id/textViewQuestion1" />
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text=""
+            android:hint="@string/null_score"
+            android:id="@+id/textViewScoreP1Q4"
+            android:layout_below="@id/textViewScoreP1Q3"
+            android:layout_toLeftOf="@+id/textViewQuestion4"
+            android:gravity="center_vertical|center_horizontal"
+            android:background="@color/bluegreyLight" />
 
-    <TextView
-        android:layout_width="30dp"
-        android:layout_height="50dp"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text=""
-        android:hint="Point 2 Player 2"
-        android:id="@+id/textViewScoreP2-2"
-        android:layout_below="@id/textViewScoreP2-1"
-        android:layout_toRightOf="@+id/textViewQuestion2" />
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text=""
+            android:hint="@string/null_score"
+            android:id="@+id/textViewScoreP1Q5"
+            android:layout_below="@id/textViewScoreP1Q4"
+            android:layout_toLeftOf="@+id/textViewQuestion5"
+            android:gravity="center_vertical|center_horizontal"
+            android:background="@color/blueVeryDark" />
 
-    <TextView
-        android:layout_width="30dp"
-        android:layout_height="50dp"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text=""
-        android:hint="Point 3 Player 2"
-        android:id="@+id/textViewScoreP2-3"
-        android:layout_below="@id/textViewScoreP2-2"
-        android:layout_toRightOf="@+id/textViewQuestion3" />
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text=""
+            android:hint="@string/null_score"
+            android:id="@+id/textViewScoreP2Q1"
+            android:layout_toRightOf="@+id/textViewQuestion1"
+            android:gravity="center_vertical|center_horizontal"
+            android:background="@color/blueVeryDark" />
 
-    <TextView
-        android:layout_width="30dp"
-        android:layout_height="50dp"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text=""
-        android:hint="Point 4 Player 2"
-        android:id="@+id/textViewScoreP2-4"
-        android:layout_below="@id/textViewScoreP2-3"
-        android:layout_toRightOf="@+id/textViewQuestion4" />
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text=""
+            android:hint="@string/null_score"
+            android:id="@+id/textViewScoreP2Q2"
+            android:layout_below="@id/textViewScoreP2Q1"
+            android:layout_toRightOf="@+id/textViewQuestion2"
+            android:gravity="center_vertical|center_horizontal"
+            android:background="@color/bluegreyLight" />
 
-    <TextView
-        android:layout_width="30dp"
-        android:layout_height="50dp"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text=""
-        android:hint="Point 5 Player 2"
-        android:id="@+id/textViewScoreP2-5"
-        android:layout_below="@id/textViewScoreP2-4"
-        android:layout_toRightOf="@+id/textViewQuestion5" />
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text=""
+            android:hint="@string/null_score"
+            android:id="@+id/textViewScoreP2Q3"
+            android:layout_below="@id/textViewScoreP2Q2"
+            android:layout_toRightOf="@+id/textViewQuestion3"
+            android:gravity="center_vertical|center_horizontal"
+            android:background="@color/blueVeryDark" />
+
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text=""
+            android:hint="@string/null_score"
+            android:id="@+id/textViewScoreP2Q4"
+            android:layout_below="@id/textViewScoreP2Q3"
+            android:layout_toRightOf="@+id/textViewQuestion4"
+            android:gravity="center_vertical|center_horizontal"
+            android:background="@color/bluegreyLight" />
+
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text=""
+            android:hint="@string/null_score"
+            android:id="@+id/textViewScoreP2Q5"
+            android:layout_below="@id/textViewScoreP2Q4"
+            android:layout_toRightOf="@+id/textViewQuestion5"
+            android:gravity="center_vertical|center_horizontal"
+            android:background="@color/blueVeryDark" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:max="300"
+            android:progress="60"
+            android:progressDrawable="@drawable/circular_progress_bar"
+            />
+
+    </RelativeLayout>
 
 </RelativeLayout>

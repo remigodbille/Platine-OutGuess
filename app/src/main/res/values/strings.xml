@@ -9,6 +9,10 @@
     <string name="button_media">Voter</string>
     <string name="button_availablesoon">Prochainement</string>
 
+    <!-- strings activité récap score -->
+    <string name="null_score">0</string>
+    <string name="null_question">Oeuvre</string>
+
 
 
 </resources>

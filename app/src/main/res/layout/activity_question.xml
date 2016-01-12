@@ -93,33 +93,37 @@
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="300dp"
-        android:layout_marginTop="80dp">
-
-        <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal">
+            android:layout_height="300dp"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="80dp">
 
             <View style="@style/Divider"
+                android:layout_width="170dp"
+                android:layout_height="3dp"
                 android:layout_marginTop="50dp"/>
 
             <View style="@style/Divider"
+                android:layout_width="170dp"
+                android:layout_height="3dp"
                 android:layout_marginTop="47dp"/>
 
             <View style="@style/Divider"
+                android:layout_width="170dp"
+                android:layout_height="3dp"
                 android:layout_marginTop="47dp"/>
 
             <View style="@style/Divider"
+                android:layout_width="170dp"
+                android:layout_height="3dp"
                 android:layout_marginTop="47dp"/>
 
             <View style="@style/Divider"
+                android:layout_width="170dp"
+                android:layout_height="3dp"
                 android:layout_marginTop="47dp"/>
 
-        </LinearLayout>
 
     </LinearLayout>
 

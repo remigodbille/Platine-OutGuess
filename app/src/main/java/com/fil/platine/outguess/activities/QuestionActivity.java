@@ -112,7 +112,13 @@ public class QuestionActivity extends Activity {
                 dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         finish();
-                        startActivity(new Intent(getApplicationContext(), ScoreActivity.class));
+
+                        Intent scoreIntent = new Intent(getApplicationContext(), ScoreActivity.class);
+                        Bundle scoreBundle = new Bundle();
+                        scoreBundle.putInt("POINTS", SCORE);
+                        scoreBundle.putString("OEUVRE", CORRECT_ANSWER);
+                        scoreIntent.putExtras(scoreBundle);
+                        startActivity(scoreIntent);
                     }
                 });
 
