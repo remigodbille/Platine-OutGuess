@@ -7,11 +7,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:text="@string/app_name"
+        android:text="@string/gametype"
         android:id="@+id/title_home"
 
         android:textColor="@color/white"
-        android:textSize="36sp"
+        android:textSize="28sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp" />
@@ -27,8 +27,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:text="@string/button_play"
-        android:id="@+id/button_play"
+        android:text="@string/button_solo"
+        android:id="@+id/button_solo"
 
         android:background="@drawable/buttonflat" />
 
@@ -37,11 +37,12 @@
         android:layout_height="wrap_content"
 
         android:text="@string/button_availablesoon"
-        android:id="@+id/button_media"
+        android:id="@+id/button_multi"
 
         android:background="@drawable/buttonflat"
         android:layout_marginTop="25dp"
         android:enabled="false" />
+
     </LinearLayout>
 
 </RelativeLayout>

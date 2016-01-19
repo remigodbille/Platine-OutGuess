@@ -1,5 +1,6 @@
 package com.fil.platine.outguess.activities;
 
+import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -8,6 +9,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -34,6 +36,14 @@ public class ScoreActivity extends Activity {
         Bundle extras = intent.getExtras();
         textViewQuestion1.setText(extras.getString("OEUVRE"));
         textViewScoreP1Q1.setText(String.valueOf(extras.getInt("POINTS")));
+
+        /*
+        ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        ObjectAnimator animation = ObjectAnimator.ofInt(progressBar, "progress", 0, 182);
+        animation.setDuration (2000);
+        animation.setInterpolator(new DecelerateInterpolator());
+        animation.start();
+        */
     }
 
 }

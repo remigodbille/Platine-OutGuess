@@ -196,6 +196,7 @@
             android:gravity="center_vertical|center_horizontal"
             android:background="@color/blueVeryDark" />
 
+        <!--
         <ProgressBar
             android:id="@+id/progressBar"
             style="?android:attr/progressBarStyleHorizontal"
@@ -207,6 +208,7 @@
             android:progress="60"
             android:progressDrawable="@drawable/circular_progress_bar"
             />
+            -->
 
     </RelativeLayout>
 

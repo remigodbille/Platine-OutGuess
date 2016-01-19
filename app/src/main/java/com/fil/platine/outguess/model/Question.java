@@ -4,6 +4,7 @@ package com.fil.platine.outguess.model;
  * Created by Chris on 06/01/2016.
  */
 public class Question {
+    int id;
     String answer;
     String clue1;
     String clue2;
@@ -11,6 +12,8 @@ public class Question {
     String clue4;
     String clue5;
     String clue6;
+
+    public Question() {}
 
     public Question(String answer, String[] clues) {
         this.answer = answer;
@@ -20,6 +23,14 @@ public class Question {
         this.clue4 = clues[3];
         this.clue5 = clues[4];
         this.clue6 = clues[5];
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getAnswer() {

@@ -14,10 +14,15 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.fil.platine.outguess.R;
+import com.fil.platine.outguess.database.DB_DAO;
 import com.fil.platine.outguess.model.Question;
 
 
 public class QuestionActivity extends Activity {
+
+    private DB_DAO bd;
+
+    TextView mTextViewScore;
 
     ProgressBar mProgressBar;
     CountDownTimer mCountDownTimer;
@@ -27,7 +32,7 @@ public class QuestionActivity extends Activity {
     int TIMER_REFRESH = 50;
     String CORRECT_ANSWER;
 
-    int SCORE = 0;
+    int SCORE;
 
     TextView[] mTextViewList;
     int mNextItem;
@@ -41,16 +46,30 @@ public class QuestionActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
 
+        mTextViewScore = (TextView) findViewById(R.id.textViewCurrScore);
+        getCurrentScore(getIntent());
+
         mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
         mProgressBar.setMax(TIMER_QUESTION);
         mProgressBar.setProgress(mCurrProgress);
 
+        // Initialisation et ouverture de l'accès à la BDD
+        bd = new DB_DAO();
+        bd.ouverture(this);
+        bd.remplirBDD();
+
+        Question randQ = bd.getRandQuestion();
+        Log.e("Test", ""+randQ);
+
+        /*
         String[] words = {"etoile", "galaxie", "extraterrestres" , "force", "sith", "jedi"};
         Question question1 = new Question("star wars", words);
         CORRECT_ANSWER = question1.getAnswer();
+        */
 
+        CORRECT_ANSWER = randQ.getAnswer();
         mTextViewList = new TextView[6];
-        initTextViews(question1);
+        initTextViews(randQ);
 
         mNextItem = 0;
         showText(mTextViewList[mNextItem]);
@@ -88,6 +107,17 @@ public class QuestionActivity extends Activity {
                 mCurrProgress = TIMER_QUESTION;
                 mProgressBar.setProgress(mCurrProgress);
 
+                AlertDialog.Builder dialog = new AlertDialog.Builder(QuestionActivity.this);
+                dialog.setTitle("Résultat");
+                dialog.setCancelable(false);
+                dialog.setMessage("Le temps est écoulé, vous avez totalisé un score de " + SCORE + ".");
+                dialog.setPositiveButton("Retourner à l'accueil", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        finish();
+                    }
+                });
+                dialog.show();
+
                 Log.i("TAG_Timer", "Timer finished !");
             }
         };
@@ -105,10 +135,11 @@ public class QuestionActivity extends Activity {
         mButtonValidate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mCountDownTimer.cancel();
                 AlertDialog.Builder dialog = new AlertDialog.Builder(QuestionActivity.this);
                 dialog.setTitle("Résultat");
-                dialog.setMessage("Attente d'une réponse");
                 dialog.setCancelable(false);
+                /*
                 dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         finish();
@@ -121,15 +152,34 @@ public class QuestionActivity extends Activity {
                         startActivity(scoreIntent);
                     }
                 });
+                */
 
                 if(checkAnswer(mEditTextAnswer.getText().toString())) {
-                    SCORE = (TIMER_QUESTION - mCurrProgress) / 100;
-                    dialog.setMessage("BRAVO !\nVous avez obtenu " + SCORE + " points !");
-                } else {
-                    SCORE = 0;
-                    dialog.setMessage("PERDU !\nVous avez obtenu " + SCORE + " points !");
-                }
+                    int questionScore = (TIMER_QUESTION - mCurrProgress) / 100;
+                    dialog.setMessage("BRAVO !\nVous avez obtenu " + questionScore + " points !");
+                    SCORE = SCORE + (TIMER_QUESTION - mCurrProgress) / 100;
+                    dialog.setPositiveButton("Question suivante", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            finish();
 
+                            Intent nextQuestionIntent = new Intent(getApplicationContext(), QuestionActivity.class);
+                            Bundle scoreBundle = new Bundle();
+                            scoreBundle.putInt("POINTS", SCORE);
+                            /*
+                            scoreBundle.putString("OEUVRE", CORRECT_ANSWER);
+                            */
+                            nextQuestionIntent.putExtras(scoreBundle);
+                            startActivity(nextQuestionIntent);
+                        }
+                    });
+                } else {
+                    dialog.setMessage("La réponse est incorrecte.\nVous avez totalisé un score de " +SCORE+ ".");
+                    dialog.setPositiveButton("Retourner à l'accueil", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            finish();
+                        }
+                    });
+                }
                 dialog.show();
             }
         });
@@ -161,6 +211,17 @@ public class QuestionActivity extends Activity {
 
     public void showText(TextView textView){
         textView.setTextColor(getResources().getColor(R.color.greyLight));
+    }
+
+    public void getCurrentScore(Intent intent) {
+        Bundle extras = intent.getExtras();
+        if (extras != null) {
+            if (extras.containsKey("POINTS")) {
+                SCORE = extras.getInt("POINTS");
+            }
+        }
+        String currScore = mTextViewScore.getText() + "" +SCORE;
+        mTextViewScore.setText(currScore);
     }
 
 }

@@ -24,7 +24,8 @@ public class HomeActivity extends Activity {
         buttonPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), QuestionActivity.class));
+                //startActivity(new Intent(getApplicationContext(), QuestionActivity.class));
+                startActivity(new Intent(getApplicationContext(), GametypeActivity.class));
             }
         });
     }

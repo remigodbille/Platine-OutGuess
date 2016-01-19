@@ -9,6 +9,14 @@
     <string name="button_media">Voter</string>
     <string name="button_availablesoon">Prochainement</string>
 
+    <!-- strings choix du mode de jeu -->
+    <string name="gametype">Choix du mode de jeu</string>
+    <string name="button_solo">Mode marathon</string>
+    <string name="button_multi">Mode versus</string>
+
+    <!-- strings mode marathon -->
+    <string name="current_score">Score actuel :\u0020</string>
+
     <!-- strings activité récap score -->
     <string name="null_score">0</string>
     <string name="null_question">Oeuvre</string>
