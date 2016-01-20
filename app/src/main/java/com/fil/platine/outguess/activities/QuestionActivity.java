@@ -20,7 +20,7 @@ import com.fil.platine.outguess.model.Question;
 
 public class QuestionActivity extends Activity {
 
-    private DB_DAO bd;
+    private DB_DAO db;
 
     TextView mTextViewScore;
 
@@ -30,8 +30,8 @@ public class QuestionActivity extends Activity {
     int mCurrProgress = 0;
     int TIMER_QUESTION = 30000;
     int TIMER_REFRESH = 50;
-    String CORRECT_ANSWER;
 
+    Question randQ;
     int SCORE;
 
     TextView[] mTextViewList;
@@ -54,11 +54,11 @@ public class QuestionActivity extends Activity {
         mProgressBar.setProgress(mCurrProgress);
 
         // Initialisation et ouverture de l'accès à la BDD
-        bd = new DB_DAO();
-        bd.ouverture(this);
-        bd.remplirBDD();
+        db = new DB_DAO();
+        db.open(this);
+        db.fill();
 
-        Question randQ = bd.getRandQuestion();
+        randQ = db.getRandQuestion();
         Log.e("Test", ""+randQ);
 
         /*
@@ -67,7 +67,6 @@ public class QuestionActivity extends Activity {
         CORRECT_ANSWER = question1.getAnswer();
         */
 
-        CORRECT_ANSWER = randQ.getAnswer();
         mTextViewList = new TextView[6];
         initTextViews(randQ);
 
@@ -154,7 +153,7 @@ public class QuestionActivity extends Activity {
                 });
                 */
 
-                if(checkAnswer(mEditTextAnswer.getText().toString())) {
+                if(checkAnswer(mEditTextAnswer.getText().toString(), randQ)) {
                     int questionScore = (TIMER_QUESTION - mCurrProgress) / 100;
                     dialog.setMessage("BRAVO !\nVous avez obtenu " + questionScore + " points !");
                     SCORE = SCORE + (TIMER_QUESTION - mCurrProgress) / 100;
@@ -185,8 +184,10 @@ public class QuestionActivity extends Activity {
         });
     }
 
-    public boolean checkAnswer(String answer){
-        return answer.equals(CORRECT_ANSWER);
+    public boolean checkAnswer(String userAnswer, Question question){
+        String userAnswerReformatted = userAnswer.trim().toLowerCase();
+        String correctAnswerReformatted = question.getAnswer().trim().toLowerCase();
+        return userAnswerReformatted.equals(correctAnswerReformatted);
     }
 
     public void initTextViews(Question question) {

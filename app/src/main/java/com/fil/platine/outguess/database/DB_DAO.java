@@ -21,17 +21,17 @@ public class DB_DAO {
     }
 
     // On ouvre l'accès à la BDD et on autorise l'écriture à l'intérieur
-    public void ouverture(Context ctx) {
+    public void open(Context ctx) {
         bd = new DB(ctx, "oeuvres.bd", null, 1).getWritableDatabase();
     }
 
     // On ferme l'accès à la BDD
-    public void fermeture() {
+    public void close() {
         bd.close();
     }
 
     // On ajoute les valeurs d'une question à la BDD
-    public long ajouter(Question question) {
+    public long add(Question question) {
         ContentValues valeurs = new ContentValues();
         valeurs.put("answer", question.getAnswer());
         valeurs.put("clue1", question.getClue1());
@@ -57,7 +57,7 @@ public class DB_DAO {
     }
 
     // On supprime les valeurs d'une question dans la BDD
-    public int supprimer(Question question) {
+    public int delete(Question question) {
         return bd.delete(TABLE_NAME, "id = " + question.getId(), null);
     }
 
@@ -104,22 +104,22 @@ public class DB_DAO {
         }
     }
 
-    public void remplirBDD() {
+    public void fill() {
         String[] words = {"etoile", "galaxie", "extraterrestres" , "force", "sith", "jedi"};
         Question question = new Question("star wars", words);
-        this.ajouter(question);
+        this.add(question);
 
         words = new String[] {"galaxie", "porte des étoiles", "goa'uld", "équipes sg", "vaisseaux", "extraterrestres"};
         question = new Question("stargate sg-1", words);
-        this.ajouter(question);
+        this.add(question);
 
         words = new String[] {"drogue", "chimie", "cancer", "dealer", "professeur", "amérique"};
         question = new Question("breaking bad", words);
-        this.ajouter(question);
+        this.add(question);
 
         words = new String[] {"hôpital", "médecin", "cynique", "canne", "drogué", "résolution de cas"};
         question = new Question("dr house", words);
-        this.ajouter(question);
+        this.add(question);
     }
 }
 
