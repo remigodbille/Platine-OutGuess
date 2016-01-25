@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.os.CountDownTimer;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -113,6 +115,7 @@ public class QuestionActivity extends Activity {
                 dialog.setPositiveButton("Retourner à l'accueil", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         finish();
+                        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                     }
                 });
                 dialog.show();
@@ -129,6 +132,7 @@ public class QuestionActivity extends Activity {
                 mCountDownTimer.cancel();
             }
         });
+
 
         mButtonValidate = (Button)findViewById(R.id.button_validate);
         mButtonValidate.setOnClickListener(new View.OnClickListener() {
@@ -176,6 +180,7 @@ public class QuestionActivity extends Activity {
                     dialog.setPositiveButton("Retourner à l'accueil", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
                             finish();
+                            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                         }
                     });
                 }

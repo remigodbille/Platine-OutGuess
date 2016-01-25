@@ -21,6 +21,21 @@
     <string name="null_score">0</string>
     <string name="null_question">Oeuvre</string>
 
+    <!-- strings choix du mode de jeu et du theme new -->
+    <string name="buttonSolo">Mode marathon</string>
+    <string name="buttonVSFriend">Défi contre un ami</string>
+    <string name="buttonVSRandom">Défi aléatoire</string>
 
+    <string name="films">Films</string>
+    <string name="series">Séries</string>
+    <string name="livres">Livres</string>
+    <string name="videogames">Jeux vidéos</string>
+
+    <string name="media">Choix du media</string>
+    <string name="scifi">Science-fiction</string>
+    <string name="fantastique">fantastique</string>
+    <string name="action">Action</string>
+
+    <string name="buttonPlay">C\'est parti !</string>
 
 </resources>

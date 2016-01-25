@@ -25,7 +25,7 @@ public class HomeActivity extends Activity {
             @Override
             public void onClick(View view) {
                 //startActivity(new Intent(getApplicationContext(), QuestionActivity.class));
-                startActivity(new Intent(getApplicationContext(), GametypeActivity.class));
+                startActivity(new Intent(getApplicationContext(), GameLobbyActivity.class));
             }
         });
     }

@@ -31,4 +31,7 @@
     <item name="greyVeryDark" type="color">#212121</item>
 
     <item name="white" type="color">#FFFFFF</item>
+    <item name="black" type="color">#000000</item>
+    <item name="green" type="color">#44CC44</item>
+
 </resources>

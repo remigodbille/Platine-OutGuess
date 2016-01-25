@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="100">
+
+    <Space
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="15"
+        android:id="@+id/layoutButtonGametype" >
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="30"
+            android:text="@string/buttonVSRandom"
+            android:background="@drawable/button_selector"
+            android:id="@+id/btn_gametypeVsRdn" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2.5" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="30"
+            android:text="@string/buttonVSFriend"
+            android:background="@drawable/button_selector"
+            android:id="@+id/btn_gametypeVsFriend" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2.5" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="30"
+            android:text="@string/buttonSolo"
+            android:background="@drawable/button_selector"
+            android:id="@+id/btn_gametypeSolo" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5" />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10" />
+
+
+    <TableLayout
+        android:orientation="vertical" android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="40"
+        android:layout_gravity="center_vertical"
+        android:stretchColumns="0,1"
+        android:id="@+id/tableMedia"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="50"
+            android:layout_marginBottom="4dp">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="2dp"
+                android:id="@+id/buttonFilms"
+                android:text="@string/films"
+                android:background="@drawable/button_selector" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="2dp"
+                android:id="@+id/buttonSeries"
+                android:text="@string/series"
+                android:background="@drawable/button_selector" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="50"
+            android:layout_marginBottom="4dp">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="2dp"
+                android:id="@+id/buttonBooks"
+                android:text="@string/livres"
+                android:background="@drawable/button_selector" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="2dp"
+                android:id="@+id/buttonVideogames"
+                android:text="@string/videogames"
+                android:background="@drawable/button_selector" />
+        </TableRow>
+    </TableLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10" />
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:id="@+id/buttonPlay"
+        android:text="@string/buttonPlay"
+        android:background="@drawable/buttonflat"
+        android:layout_gravity="center_horizontal" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5" />
+
+</LinearLayout>
