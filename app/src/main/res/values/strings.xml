@@ -17,9 +17,17 @@
     <!-- strings mode marathon -->
     <string name="current_score">Score actuel :\u0020</string>
 
+    <!-- strings réponse question -->
+    <string name="button_validate">J\'ai deviné</string>
+
     <!-- strings activité récap score -->
     <string name="null_score">0</string>
     <string name="null_question">Oeuvre</string>
+    <string name="first_question">Manche 1</string>
+    <string name="second_question">Manche 2</string>
+    <string name="third_question">Manche 3</string>
+    <string name="fourth_question">Manche 4</string>
+    <string name="fifth_question">Manche 5</string>
 
     <!-- strings choix du mode de jeu et du theme new -->
     <string name="buttonSolo">Mode marathon</string>

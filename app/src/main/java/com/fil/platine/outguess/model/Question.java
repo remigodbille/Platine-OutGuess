@@ -65,20 +65,20 @@ public class Question {
         this.clue3 = clue3;
     }
 
-    public String getClue5() {
-        return clue5;
-    }
-
-    public void setClue5(String clue5) {
-        this.clue5 = clue5;
-    }
-
     public String getClue4() {
         return clue4;
     }
 
     public void setClue4(String clue4) {
         this.clue4 = clue4;
+    }
+
+    public String getClue5() {
+        return clue5;
+    }
+
+    public void setClue5(String clue5) {
+        this.clue5 = clue5;
     }
 
     public String getClue6() {

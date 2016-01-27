@@ -38,6 +38,11 @@ public class GameLobbyActivity extends Activity {
 
         buttonStart = (Button)findViewById(R.id.buttonPlay);
 
+        buttonFilms.setSelected(true);
+        buttonSeries.setSelected(true);
+        buttonBooks.setSelected(true);
+        buttonVideogames.setSelected(true);
+
 
         buttonVSRandom.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,10 +119,17 @@ public class GameLobbyActivity extends Activity {
                 checkGametype();
                 checkMedia();
 
+                if(buttonVSFriend.isSelected()) {
+                    finish();
+                    startActivity(new Intent(getApplicationContext(), FriendActivity.class));
+                }
+
                 if(buttonSolo.isSelected()) {
                     finish();
                     startActivity(new Intent(getApplicationContext(), QuestionActivity.class));
                 }
+
+
             }
         });
     }

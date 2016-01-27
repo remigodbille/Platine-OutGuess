@@ -30,7 +30,8 @@ public class QuestionActivity extends Activity {
     CountDownTimer mCountDownTimer;
 
     int mCurrProgress = 0;
-    int TIMER_QUESTION = 30000;
+    int TIMER_QUESTION = 12000;
+    int TIMER_NEWWORD = 2000;
     int TIMER_REFRESH = 50;
 
     Question randQ;
@@ -84,7 +85,7 @@ public class QuestionActivity extends Activity {
                 mCurrProgress += TIMER_REFRESH;
                 mProgressBar.setProgress(mCurrProgress);
 
-                if(mCurrProgress%5000 == 0) {
+                if(mCurrProgress % TIMER_NEWWORD == 0) {
                     Log.i("TAG_TIMER", "New Word");
 
                     showText(mTextViewList[mNextItem]);
@@ -161,16 +162,17 @@ public class QuestionActivity extends Activity {
                     int questionScore = (TIMER_QUESTION - mCurrProgress) / 100;
                     dialog.setMessage("BRAVO !\nVous avez obtenu " + questionScore + " points !");
                     SCORE = SCORE + (TIMER_QUESTION - mCurrProgress) / 100;
-                    dialog.setPositiveButton("Question suivante", new DialogInterface.OnClickListener() {
+                    //dialog.setPositiveButton("Question suivante", new DialogInterface.OnClickListener() {
+                    dialog.setPositiveButton("Voir le score", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
                             finish();
 
                             Intent nextQuestionIntent = new Intent(getApplicationContext(), QuestionActivity.class);
                             Bundle scoreBundle = new Bundle();
                             scoreBundle.putInt("POINTS", SCORE);
-                            /*
-                            scoreBundle.putString("OEUVRE", CORRECT_ANSWER);
-                            */
+
+                            scoreBundle.putString("OEUVRE", randQ.getAnswer());
+
                             nextQuestionIntent.putExtras(scoreBundle);
                             startActivity(nextQuestionIntent);
                         }

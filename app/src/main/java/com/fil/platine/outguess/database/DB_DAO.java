@@ -105,7 +105,8 @@ public class DB_DAO {
     }
 
     public void fill() {
-        String[] words = {"etoile", "galaxie", "extraterrestres" , "force", "sith", "jedi"};
+        /*
+        String[] words = {"Empire", "Galaxie", "Laser" , "Force", "Jedi", "Yoda"};
         Question question = new Question("star wars", words);
         this.add(question);
 
@@ -119,6 +120,11 @@ public class DB_DAO {
 
         words = new String[] {"hôpital", "médecin", "cynique", "canne", "drogué", "résolution de cas"};
         question = new Question("dr house", words);
+        this.add(question);
+        */
+
+        String[] words = new String[] {"jeu", "duel", "défier", "deviner", "indice", "oeuvre"};
+        Question question = new Question("OutGuess", words);
         this.add(question);
     }
 }

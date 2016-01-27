@@ -31,6 +31,10 @@
             android:name=".activities.GameLobbyActivity" >
         </activity>
 
+        <activity
+            android:name=".activities.FriendActivity" >
+        </activity>
+
 
     </application>
 
